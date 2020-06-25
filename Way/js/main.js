@@ -1,0 +1,1 @@
+!function(){let n=document.querySelector(".main-navigation"),i=document.querySelector(".main-navigation__toggle");n.classList.remove("main-navigation--no-js"),i.addEventListener("click",(function(){n.classList.toggle("main-navigation--open")}))}();
