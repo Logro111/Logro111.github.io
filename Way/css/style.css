@@ -1855,6 +1855,7 @@ img {
   }
   .countries-information__control-list {
     margin-bottom: 28px;
+    transition: transform 1s ease 0s;
   }
   .countries-information__slide-headline {
     margin-bottom: 16px;
