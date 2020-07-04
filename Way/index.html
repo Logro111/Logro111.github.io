@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Way &mdash; главная</title>
-  <link rel="stylesheet" href="css/style.css">
+  <script src="js/picturefill.min.js"></script>
+  <script src="js/svg4everybody.min.js"></script>
+  <script>svg4everybody();</script>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body class="page">
   <header class="page-header">
     <div class="page-header__wrapper center">
@@ -16,11 +20,11 @@
       <nav class="page-header__navigation main-navigation main-navigation--no-js">
         <button class="main-navigation__toggle"></button>
         <ul class="main-navigation__list">
-          <li class="main-navigation__item"><a class="main-navigation__link" href="">О путешествии</a></li>
-          <li class="main-navigation__item"><a class="main-navigation__link" href="">Цены</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="#countries">О путешествии</a></li>
+          <li class="main-navigation__item"><a class="main-navigation__link" href="#price">Цены</a></li>
         </ul>
       </nav>
-      <a class="page-header__telephone" href="" type="telephone">+7 (499) -784-684-46</a>
+      <a class="page-header__telephone" href="tel:+749978468446">+7 (499) -784-684-46</a>
     </div>
   </header>
   <main class="page__main page-main">
@@ -33,10 +37,10 @@
           новом свете. Вас ждет: море, горы, а также
           потрясающая красота природы.
         </p>
-        <a class="promo__link button" href="">Смотреть тур</a>
+        <a class="promo__link button" href="#tours">Смотреть тур</a>
       </div>
     </section>
-    <section class="page-main__eurotour-countries eurotour-countries center">
+    <section class="page-main__eurotour-countries eurotour-countries center" id='countries'>
       <header class="eurotour-countries__header">
         <h2 class="eurotour-countries__headline headline">Места посещения</h2>
         <p class="eurotour-countries__description">
@@ -46,58 +50,78 @@
       </header>
       <ul class="eurotour-countries__list">
         <li class="eurotour-countries__item country-card">
-          <a class="country-card__content-link" href="#greece-slide">
+          <a class="country-card__content-link" data-card='greece' href="#greece-slide">
             <picture>
-              <source media="(max-width: 767px)" srcset="img/mobile/greece@1x.jpg, img/mobile/greece@2x.jpg 2x" sizes="288px">
-              <source media="(max-width: 1213px)" srcset="img/tablet/greece@1x.jpg, img/tablet/greece@1x.jpg 2x" sizes="288px">
-              <img class="country-card__image" src="img/desktop/greece@1x.jpg" alt="">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/greece@1x.webp, img/mobile/greece@2x.webp 2x" >
+              <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/greece@1x.webp, img/tablet/greece@2x.webp 2x" >
+              <source type="image/webp" srcset="img/desktop/greece@1x.webp, img/desktop/greece@2x.webp 2x" >
+
+              <source media="(max-width: 767px)" srcset="img/mobile/greece@1x.jpg, img/mobile/greece@2x.jpg 2x" >
+              <source media="(max-width: 1213px)" srcset="img/tablet/greece@1x.jpg, img/tablet/greece@2x.jpg 2x" >
+              <img class="country-card__image" src="img/desktop/greece@1x.jpg" srcset="img/desktop/greece@1x.jpg, img/desktop/greece@2x.jpg 2x"  alt="Греция">
             </picture>
             <p class="country-card__country">Греция</p>
           </a>
         </li>
         <li class="eurotour-countries__item country-card">
-          <a class="country-card__content-link" href="#albania-slide">
+          <a class="country-card__content-link" href="#albania-slide" data-card='albania'>
             <picture>
-              <source media="(max-width: 767px)" srcset="img/mobile/albania@1x.jpg">
-              <source media="(max-width: 1213px)" srcset="img/tablet/albania@1x.jpg">
-              <img class="country-card__image" src="img/desktop/albania@1x.jpg" alt="">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/albania@1x.webp, img/mobile/albania@2x.webp 2x" >
+              <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/albania@1x.webp, img/tablet/albania@2x.webp 2x" >
+              <source type="image/webp" srcset="img/desktop/albania@1x.webp, img/desktop/albania@2x.webp 2x" >
+
+              <source media="(max-width: 767px)" srcset="img/mobile/albania@1x.jpg, img/mobile/albania@2x.jpg 2x" >
+              <source media="(max-width: 1213px)" srcset="img/tablet/albania@1x.jpg, img/tablet/albania@2x.jpg 2x" >
+              <img class="country-card__image" src="img/desktop/albania@1x.jpg" srcset="img/desktop/albania@1x.jpg, img/desktop/albania@2x.jpg 2x"  alt="Албания">
             </picture>
             <p class="country-card__country">Албания</p>
           </a>
         </li>
         <li class="eurotour-countries__item country-card">
-          <a class="country-card__content-link" href="#macedonia-slide">
+          <a class="country-card__content-link" href="#macedonia-slide" data-card='macedonia'>
             <picture>
-              <source media="(max-width: 767px)" srcset="img/mobile/macedonia@1x.jpg">
-              <source media="(max-width: 1213px)" srcset="img/tablet/macedonia@1x.jpg">
-              <img class="country-card__image" src="img/desktop/macedonia@1x.jpg" alt="">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/macedonia@1x.webp, img/mobile/macedonia@2x.webp 2x" >
+              <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/macedonia@1x.webp, img/tablet/macedonia@2x.webp 2x" >
+              <source type="image/webp" srcset="img/desktop/macedonia@1x.webp, img/desktop/macedonia@2x.webp 2x" >
+
+              <source media="(max-width: 767px)" srcset="img/mobile/macedonia@1x.jpg, img/mobile/macedonia@2x.jpg 2x" >
+              <source media="(max-width: 1213px)" srcset="img/tablet/macedonia@1x.jpg, img/tablet/macedonia@2x.jpg 2x" >
+              <img class="country-card__image" src="img/desktop/macedonia@1x.jpg" srcset="img/desktop/macedonia@1x.jpg, img/desktop/macedonia@2x.jpg 2x"  alt="Македония">
             </picture>
             <p class="country-card__country">Македония</p>
           </a>
         </li>
         <li class="eurotour-countries__item country-card">
-          <a class="country-card__content-link" href="#montenegro-slide">
+          <a class="country-card__content-link" href="#montenegro-slide" data-card='montenegro'>
             <picture>
-              <source media="(max-width: 767px)" srcset="img/mobile/montenegro@1x.jpg">
-              <source media="(max-width: 1213px)" srcset="img/tablet/montenegro@1x.jpg">
-              <img class="country-card__image" src="img/desktop/montenegro@1x.jpg" alt="">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/montenegro@1x.webp, img/mobile/montenegro@2x.webp 2x" >
+              <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/montenegro@1x.webp, img/tablet/montenegro@2x.webp 2x" >
+              <source type="image/webp" srcset="img/desktop/montenegro@1x.webp, img/desktop/montenegro@2x.webp 2x" >
+
+              <source media="(max-width: 767px)" srcset="img/mobile/montenegro@1x.jpg, img/mobile/montenegro@2x.jpg 2x" >
+              <source media="(max-width: 1213px)" srcset="img/tablet/montenegro@1x.jpg, img/tablet/montenegro@2x.jpg 2x" >
+              <img class="country-card__image" src="img/desktop/montenegro@1x.jpg" srcset="img/desktop/montenegro@1x.jpg, img/desktop/montenegro@2x.jpg 2x"  alt="Черногория">
             </picture>
             <p class="country-card__country">Черногория</p>
           </a>
         </li>
         <li class="eurotour-countries__item country-card">
-          <a class="country-card__content-link" href="#croatia-slide">
+          <a class="country-card__content-link" href="#croatia-slide" data-card='croatia'>
             <picture>
-              <source media="(max-width: 767px)" srcset="img/mobile/croatia@1x.jpg">
-              <source media="(max-width: 1213px)" srcset="img/tablet/croatia@1x.jpg">
-              <img class="country-card__image" src="img/desktop/croatia@1x.jpg" alt="">
+              <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/croatia@1x.webp, img/mobile/croatia@2x.webp 2x" >
+              <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/croatia@1x.webp, img/tablet/croatia@2x.webp 2x" >
+              <source type="image/webp" srcset="img/desktop/croatia@1x.webp, img/desktop/croatia@2x.webp 2x" >
+
+              <source media="(max-width: 767px)" srcset="img/mobile/croatia@1x.jpg, img/mobile/croatia@2x.jpg 2x" >
+              <source media="(max-width: 1213px)" srcset="img/tablet/croatia@1x.jpg, img/tablet/croatia@2x.jpg 2x" >
+              <img class="country-card__image" src="img/desktop/croatia@1x.jpg" srcset="img/desktop/croatia@1x.jpg, img/desktop/croatia@2x.jpg 2x"  alt="Хорватия">
             </picture>
             <p class="country-card__country">Хорватия</p>
           </a>
         </li>
       </ul>
     </section>
-    <section class="page-main__countries-information countries-information center">
+    <section class="page-main__countries-information countries-information center" id='tours'>
       <h2 class="visually-hidden">Подробная информация о странах тура</h2>
       <div class="countries-information__slider-control-wrapper">
         <div class="countries-information__slider-container">
@@ -132,9 +156,13 @@
             </div>
             <figure class="countries-information__image-container">
               <picture>
-                <source media="(max-width: 767px)" srcset="img/mobile/greece-info@1x.jpg">
-                <source media="(max-width: 1213px)" srcset="img/tablet/greece-info@1x.jpg">
-                <img class="countries-information__image" src="img/desktop/greece-info@1x.jpg" alt="">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/greece-info@1x.webp, img/mobile/greece-info@2x.webp 2x" >
+                <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/greece-info@1x.webp, img/tablet/greece-info@2x.webp 2x" >
+                <source type="image/webp" srcset="img/desktop/greece-info@1x.webp, img/desktop/greece-info@2x.webp 2x" >
+
+                <source media="(max-width: 767px)" srcset="img/mobile/greece-info@1x.jpg, img/mobile/greece-info@2x.jpg 2x" >
+                <source media="(max-width: 1213px)" srcset="img/tablet/greece-info@1x.jpg, img/tablet/greece-info@2x.jpg 2x" >
+                <img class="countries-information__image" src="img/desktop/greece-info@1x.jpg" srcset="img/desktop/greece-info@1x.jpg, img/desktop/greece-info@2x.jpg 2x"  alt="Греция">
               </picture>
             </figure>
             <div class="countries-information__reviews">
@@ -149,9 +177,10 @@
               </p>
               <div class="countries-information__user-account">
 
-                  <picture>
-                    <img class="countries-information__user-avatar" src="img/desktop/vlada@1x.jpg" alt="">
-                  </picture>
+                <picture>
+                  <source type="image/webp" srcset="img/desktop/vlada@1x.webp, img/desktop/vlada@2x.webp 2x" >
+                  <img class="countries-information__user-avatar" src="img/desktop/vlada@1x.jpg" srcset="img/desktop/vlada@1x.jpg, img/desktop/vlada@2x.jpg 2x" alt="Фото пользователя" >
+                </picture>
 
                 <p class="countries-information__user-name">Влада Голицина</p>
               </div>
@@ -174,7 +203,13 @@
             </div>
             <figure class="countries-information__image-container">
               <picture>
-                <img class="countries-information__image" src="img/desktop/albania-info@1x.jpg" alt="">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/albania-info@1x.webp" >
+                <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/albania-info@1x.webp" >
+                <source type="image/webp" srcset="img/desktop/albania-info@1x.webp, img/desktop/albania-info@2x.webp 2x" >
+
+                <source media="(max-width: 767px)" srcset="img/mobile/albania-info@1x.jpg" >
+                <source media="(max-width: 1213px)" srcset="img/tablet/albania-info@1x.jpg" >
+                <img class="countries-information__image" src="img/desktop/albania-info@1x.jpg" srcset="img/desktop/albania-info@1x.jpg"  alt="Албания">
               </picture>
             </figure>
             <div class="countries-information__reviews">
@@ -187,9 +222,10 @@
               </p>
               <div class="countries-information__user-account">
 
-                  <picture>
-                    <img class="countries-information__user-avatar" src="img/desktop/mari@1x.jpg" alt="">
-                  </picture>
+                <picture>
+                  <source type="image/webp" srcset="img/desktop/mari@1x.webp, img/desktop/mari@2x.webp 2x" >
+                  <img class="countries-information__user-avatar" src="img/desktop/mari@1x.jpg" srcset="img/desktop/mari@1x.jpg, img/desktop/mari@2x.jpg 2x" alt="Фото пользователя" >
+                </picture>
 
                 <p class="countries-information__user-name">Маришка</p>
               </div>
@@ -212,7 +248,13 @@
             </div>
             <figure class="countries-information__image-container">
               <picture>
-                <img class="countries-information__image" src="img/desktop/macedonia-info@1x.jpg" alt="">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/macedonia-info@1x.webp" >
+                <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/macedonia-info@1x.webp" >
+                <source type="image/webp" srcset="img/desktop/macedonia-info@1x.webp" >
+
+                <source media="(max-width: 767px)" srcset="img/mobile/macedonia-info@1x.jpg" >
+                <source media="(max-width: 1213px)" srcset="img/tablet/macedonia-info@1x.jpg" >
+                <img class="countries-information__image" src="img/desktop/macedonia-info@1x.jpg" srcset="img/desktop/macedonia-info@1x.jpg"  alt="Македония">
               </picture>
             </figure>
             <div class="countries-information__reviews">
@@ -227,10 +269,10 @@
               </p>
               <div class="countries-information__user-account">
 
-                  <picture>
-                    <img class="countries-information__user-avatar" src="img/desktop/michael@1x.jpg" alt="">
-
-                  </picture>
+                <picture>
+                  <source type="image/webp" srcset="img/desktop/michael@1x.webp, img/desktop/michael@2x.webp 2x" >
+                  <img class="countries-information__user-avatar" src="img/desktop/michael@1x.jpg" srcset="img/desktop/michael@1x.jpg, img/desktop/michael@2x.jpg 2x" alt="Фото пользователя" >
+                </picture>
                 <p class="countries-information__user-name">Михаил Кузьмин</p>
               </div>
             </div>
@@ -250,7 +292,13 @@
             </div>
             <figure class="countries-information__image-container">
               <picture>
-                <img class="countries-information__image" src="img/desktop/montenegro-info@1x.jpg" alt="">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/montenegro-info@1x.webp" >
+                <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/montenegro-info@1x.webp">
+                <source type="image/webp" srcset="img/desktop/montenegro-info@1x.webp" >
+
+                <source media="(max-width: 767px)" srcset="img/mobile/montenegro-info@1x.jpg" >
+                <source media="(max-width: 1213px)" srcset="img/tablet/montenegro-info@1x.jpg" >
+                <img class="countries-information__image" src="img/desktop/montenegro-info@1x.jpg" srcset="img/desktop/montenegro-info@1x.jpg"  alt="Черногория">
               </picture>
             </figure>
             <div class="countries-information__reviews">
@@ -262,9 +310,10 @@
               </p>
               <div class="countries-information__user-account">
 
-                  <picture>
-                    <img class="countries-information__user-avatar" src="img/desktop/anastas@1x.jpg" alt="">
-                  </picture>
+                <picture>
+                  <source type="image/webp" srcset="img/desktop/anastas@1x.webp, img/desktop/anastas@2x.webp 2x" >
+                  <img class="countries-information__user-avatar" src="img/desktop/anastas@1x.jpg" srcset="img/desktop/anastas@1x.jpg, img/desktop/anastas@2x.jpg 2x" alt="Фото пользователя" >
+                </picture>
 
                 <p class="countries-information__user-name">Анастасия Мей</p>
               </div>
@@ -287,7 +336,13 @@
             </div>
             <figure class="countries-information__image-container">
               <picture>
-                <img class="countries-information__image" src="img/desktop/croatia-info@1x.jpg" alt="">
+                <source type="image/webp" media="(max-width: 767px)" srcset="img/mobile/croatia-info@1x.webp" >
+                <source type="image/webp" media="(max-width: 1213px)" srcset="img/tablet/croatia-info@1x.webp" >
+                <source type="image/webp" srcset="img/desktop/croatia-info@1x.webp" >
+
+                <source media="(max-width: 767px)" srcset="img/mobile/croatia-info@1x.jpg" >
+                <source media="(max-width: 1213px)" srcset="img/tablet/croatia-info@1x.jpg" >
+                <img class="countries-information__image" src="img/desktop/croatia-info@1x.jpg" srcset="img/desktop/croatia-info@1x.jpg"  alt="Хорватия">
               </picture>
             </figure>
             <div class="countries-information__reviews">
@@ -302,7 +357,8 @@
               </p>
               <div class="countries-information__user-account">
                 <picture>
-                  <img class="countries-information__user-avatar" src="img/desktop/vladimir@1x.jpg" alt="">
+                  <source type="image/webp" srcset="img/desktop/vladimir@1x.webp, img/desktop/vladimir@2x.webp 2x" >
+                  <img class="countries-information__user-avatar" src="img/desktop/vladimir@1x.jpg" srcset="img/desktop/vladimir@1x.jpg, img/desktop/vladimir@2x.jpg 2x" alt="Фото пользователя" >
                 </picture>
                 <p class="countries-information__user-name">Владимир Мулицин</p>
               </div>
@@ -311,7 +367,7 @@
         </ul>
       </div>
     </section>
-    <section class="page-main__price price center">
+    <section class="page-main__price price center" id="price">
       <header class="price__header">
         <h2 class="price__headline headline">Цены</h2>
         <p class="price__description">
@@ -324,7 +380,7 @@
           отдохните на все 100%!
         </p>
         <p class="price__connection">Свяжитесь с нами</p>
-        <a class="price__telephone" href="" type="telephone">+7 (499) -784-684-46</a>
+        <a class="price__telephone" href="tel:+749978468446">+7 (499) -784-684-46</a>
       </header>
       <ul class="price__list">
         <li class="price__item price-card">
@@ -420,10 +476,16 @@
         <p class="questions__hedline">У Вас остались вопросы?</p>
         <p class="questions__description">Оставьте свой номер или e-mail и мы свяжемся с Вами</p>
         <div class="questions__form-wrapper">
-          <label class="visually-hidden" for="tel-input">Номер телефона</label>
-          <input class="questions__field questions__field--telephone" id="tel-input" type="tel" placeholder="Введите 10 цифр номера">
-          <label class="visually-hidden" for="email-input">Email адрес</label>
-          <input class="questions__field questions__field--email" id="email-input" type="email" placeholder="E-mail">
+          <div class="questions__field-wrapper">
+            <label class="visually-hidden" for="tel-input">Номер телефона</label>
+            <span class="questions__field-decoration">*</span>
+            <span class="questions__field-decoration questions__field-decoration--telephone-index">+7</span>
+            <input class="questions__field questions__field--telephone" id="tel-input" type="tel" placeholder="Введите 10 цифр номера">
+          </div>
+          <div class="questions__field-wrapper">
+            <label class="visually-hidden" for="email-input">Email адрес</label>
+            <input class="questions__field questions__field--email" id="email-input" type="email" placeholder="E-mail">
+          </div>
         </div>
         <button class="questions__button button" type="submit">Отправить</button>
       </form>
@@ -456,9 +518,9 @@
     </section>
     <section class="page-footer__contacts contacts">
       <h2 class="contacts__headline footer-headline">Наши контакты</h2>
-      <a class="contacts__link contacts__link--mail-address" href="" type="email">puteshestviemechta@gmail.ru</a>
-      <a class="contacts__link contacts__link--mail" href="" type="email">Почта</a>
-      <a class="contacts__link contacts__link--telephone" href="" type="tel">+7 (499) -784-684-46</a>
+      <a class="contacts__link contacts__link--mail-address" href="mailto:puteshestviemechta@gmail.ru">puteshestviemechta@gmail.ru</a>
+      <a class="contacts__link contacts__link--mail" href="mailto:puteshestviemechta@gmail.ru">Почта</a>
+      <a class="contacts__link contacts__link--telephone" href="tel:+749978468446">+7 (499) -784-684-46</a>
     </section>
     <section class="corporate-travels">
       <h2 class="corporate-travels__headline footer-headline">Корпоративные путешествия</h2>
@@ -472,24 +534,30 @@
       </p>
     </section>
   </footer>
-  <section class="buy-popup">
-    <button class="buy-popup__close" type="button"></button>
-    <h2 class="buy-popup__headline">Купить тур</h2>
-    <label class="visually-hidden" for="tel-input">Номер телефона</label>
-    <input class="buy-popup__field buy-popup__field--telephone" id="tel-input" type="tel" placeholder="Введите 10 цифр номера">
-    <label class="visually-hidden" for="email-input">Email адрес</label>
-    <input class="buy-popup__field" id="email-input" type="email" placeholder="E-mail">
-    <button class="buy-popup__button button" type="submit">Отправить</button>
+  <section class="buy-tour">
+    <div class="buy-tour__popup">
+      <button class="buy-tour__close" type="button"></button>
+      <h2 class="buy-tour__headline">Купить тур</h2>
+      <div class="buy-tour__field-wrapper">
+        <label class="visually-hidden" for="tel">Номер телефона</label>
+        <span class="buy-tour__field-decoration">*</span>
+        <span class="buy-tour__field-decoration buy-tour__field-decoration--telephone-index">+7</span>
+        <input class="buy-tour__field buy-tour__field--telephone" id="tel" type="tel" placeholder="Введите 10 цифр номера">
+     </div>
+      <div class="buy-tour__field-wrapper">
+        <label class="visually-hidden" for="email">Email адрес</label>
+        <input class="buy-tour__field" id="email" type="email" placeholder="E-mail">
+      </div>
+      <button class="buy-tour__button button" type="submit">Отправить</button>
+    </div>
   </section>
-  <div class="success-popup">
-    <button class="success-popup__close" type="button"></button>
-    <p class="success-popup__description">Форма успешно отправлена, спасибо! :)</p>
-  </div>
-  <script src="js/main.js"></script>
-  <!-- <script src="js/slider.js"></script> -->
   <script src="js/swiper.min.js"></script>
-  <script src="js/util.js"></script>
-  <script src="js/swipperSlider.js"></script>
+  <script src="js/util.min.js"></script>
+  <script src="js/swiperSettings.min.js"></script>
+  <script src="js/validation.min.js"></script>
+  <script src="js/fullSlider.min.js"></script>
+  <script src="js/buyPopup.min.js"></script>
+  <script src="js/main.min.js"></script>
 </body>
 
 </html>
